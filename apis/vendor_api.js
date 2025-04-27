@@ -430,7 +430,8 @@ router.patch("/vendors/:id/payment-attachment", upload.single("payment_attachmen
       entityId: vendor._id,
       metadata: {
         documentType: 'Payment Receipt',
-        name: fileName
+        // name: fileName
+        name: req.file.filename
       }
     });
     await notification.save();
